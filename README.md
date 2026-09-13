@@ -34,6 +34,11 @@ app/
   jsx-syntax/            → JSX rules (className, htmlFor, {} interpolation, &&)
   rendering-lists/        → map() + key, add/remove list items (useState)
   events/                → event handling (onClick, onChange, onSubmit, etc.)
+  use-effect/            → useEffect — fetch data once after first render
+  use-router/            → useRouter — push/back, navigate from code
+  use-params/            → useParams — read dynamic URL segment
+  use-params/[id]/        → dynamic route: same file renders for /1, /2, /3...
+  use-ref/               → useRef — DOM ref to focus an input
 components/
   PageHeader.jsx         → shared page header (title + optional description)
   WelcomeCard.jsx        → example reusable component with props
@@ -48,13 +53,21 @@ Each topic page is self-contained and commented in place — read the file itsel
 3. JSX syntax rules
 4. Rendering lists (map + key)
 5. Event handling
+6. useEffect (data fetching)
+7. useRouter (programmatic navigation)
+8. useParams (dynamic route segments)
+9. useRef (DOM ref, focus)
 
 ## Topics planned (per full course outline)
 
 - Sibling components
 - Fragments
 - Conditional rendering
-- Hooks: useState, useEffect, useRouter, useParams, useRef, useCallback, useMemo, useContext, useReducer
+- Hooks: useCallback, useMemo, useContext, useReducer
+
+## Known issues
+
+- [use-effect/page.jsx](app/use-effect/page.jsx) imports `axios`, not listed in `package.json` — run `npm install axios` or swap to the commented-out `fetch()` version in that file.
 
 ## Notes
 

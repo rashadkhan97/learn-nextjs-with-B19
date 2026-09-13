@@ -8,7 +8,8 @@ export default function RenderingListsPage() {
   const [users, setUsers] = useState([]); // list state, starts empty
 
   const addUser = () => {
-    setUsers([...users, { id: nextId, name: `User ${nextId}` }]); // spread = new array, never mutate state directly
+    // spread copies old array's items, new item placed AFTER spread = added at end. New array = never mutate state directly.
+    setUsers([...users, { id: nextId, name: `User ${nextId}` }]);
     nextId += 1;
   };
 

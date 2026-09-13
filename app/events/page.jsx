@@ -5,7 +5,8 @@ import PageHeader from '../../components/PageHeader';
 export default function EventsPage() {
   const [log, setLog] = useState([]); // most recent event message
   const [lastKey, setLastKey] = useState('');
-  const addLog = (msg) => setLog((prev) => [msg, ...prev].slice(0, 1)); // prev = current state, keeps only latest 1 entry
+  // spread copies prev array's items, new msg placed BEFORE spread = added at start. slice(0,1) then keeps only that newest 1.
+  const addLog = (msg) => setLog((prev) => [msg, ...prev].slice(0, 1));
 
   const handleChange = (e) => {
     // e.target.name / e.target.value — which field fired, and its current value
